@@ -10,7 +10,8 @@ def rec(request):
 	return HttpResponse(json.dumps(result))
 
 def resolve(request):
-	f = open('tmp/test.jpg', 'w')
+    print len(request.body)
+	f = open('tmp/test.jpg', 'wb')
 	f.write(request.body)
 	f.close()
 	return HttpResponse('{"status":"ok"}')
