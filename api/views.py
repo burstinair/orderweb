@@ -5,13 +5,13 @@ import json
 from django.core.files import File
 
 def rec(request):
-	result = {'result': int(request.GET['a']) + int(request.GET['b'])}
-	# return HttpResponse(serializers.serialize('json', result))
-	return HttpResponse(json.dumps(result))
+    result = {'result': int(request.GET['a']) + int(request.GET['b'])}
+    # return HttpResponse(serializers.serialize('json', result))
+    return HttpResponse(json.dumps(result))
 
 def resolve(request):
     print len(request.body)
-	f = open('tmp/test.jpg', 'wb')
-	f.write(request.body)
-	f.close()
-	return HttpResponse('{"status":"ok"}')
+    f = open('tmp/test.jpg', 'wb')
+    f.write(request.body)
+    f.close()
+    return HttpResponse('{"status":"ok"}')
